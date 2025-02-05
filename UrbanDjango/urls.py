@@ -2,7 +2,7 @@
 URL configuration for UrbanDjango project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/4.2/topics/http/urls/
+    https://docs.djangoproject.com/en/5.1/topics/http/urls/
 Examples:
 Function views
     1. Add an import:  from my_app import views
@@ -14,20 +14,29 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
 from django.contrib import admin
 from django.urls import path
-from task2.views import *
-# from task3.views import *
-from task4.views import platform, games, cart
+# from task2.views import func_template, ClassTemplate
+from task5.views import sign_up_by_django , sign_up_by_html
 
+# urlpatterns = [
+#     path('admin/', admin.site.urls),
+#     path('', func_template),
+#     path('page2/', ClassTemplate.as_view())
+# ]
+
+# urlpatterns = [
+#     path('admin/', admin.site.urls),
+#     path('', home_page),
+#     path('page1/', game_page),
+#     path('page2/', cart_page),
+# ]
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('func_view/', task2_func_view),
-    path('class_view/', ViewByClass.as_view()),
-    path('platform/', platform),
-    path('platform/games/', games),
-    path('platform/cart/', cart)
+    path("admin/", admin.site.urls),
+    path('', sign_up_by_django),
+    path('sing/', sign_up_by_html),
 ]
 
 
